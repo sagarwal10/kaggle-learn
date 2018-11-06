@@ -1,0 +1,18 @@
+
+Mean errors
+------------
+Imputer NO, One Hot Encoding NO: 15949-18000
+Imputer YES One Hot Encoding NO: 16000-20000
+Imputer NO  One Hot Encoding YES: 15000-16000
+Imputer YES One Hot Encoding YES: 15000-16400 
+
+Advanced Competition
+--------------------
+Rank: 2628
+Score: 0.13751
+
+Machine Learning Competition
+----------------------------
+Rank: 114
+Score: 15555.65
+

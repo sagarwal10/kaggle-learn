@@ -1,0 +1,30 @@
+# This Python 3 environment comes with many helpful analytics libraries installed
+# It is defined by the kaggle/python docker image: https://github.com/kaggle/docker-python
+# For example, here's several helpful packages to load in 
+
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+# Input data files are available in the "../input/" directory.
+# For example, running this (by clicking run or pressing Shift+Enter) will list the files in the input directory
+
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import Imputer
+from sklearn.ensemble import GradientBoostingRegressor, GradientBoostingClassifier
+
+data = pd.read_csv('../input/train.csv')
+cols_to_use= ['LotArea', 'YearBuilt', 'YrSold']
+y = data.SalePrice
+X = data[cols_to_use]
+
+my_imputer = Imputer()
+X = my_imputer.fit_transform(X)
+
+my_model = GradientBoostingRegressor()
+# fit the model as usual
+my_model.fit(X, y)
+
+from sklearn.ensemble.partial_dependence import partial_dependence, plot_partial_dependence
+
+plot_partial_dependence(my_model, features=[0, 1, 2], X=X, 
+                                        feature_names=cols_to_use, grid_resolution=10)
