@@ -1,0 +1,6 @@
+
+RandomForestRegressor Mean Error without One Hot Encoding:
+17500 - 24000
+
+RandomForestRegressor Mean Error with One Hot Encoding:
+15000 - 20000
